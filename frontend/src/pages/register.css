@@ -1,0 +1,222 @@
+/* Registration page — scoped layout (React mounts to #root, not body) */
+.register-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #237a28;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.register-page *,
+.register-page *::before,
+.register-page *::after {
+  box-sizing: border-box;
+}
+
+/* Center the split card vertically and horizontally */
+.register-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 24px 44px;
+  width: 100%;
+}
+
+/* === REGISTER CONTAINER === */
+.register-container {
+  display: flex;
+  background: #ffffff;
+  width: 100%;
+  max-width: 1100px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* LEFT SIDE */
+.register-page .left-section {
+  flex: 0 0 38%;
+  min-width: 260px;
+  background: #ecfdf3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.register-page .left-section .logo-img {
+  width: 140px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.register-page .left-section h1 {
+  color: #1b5e20;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.register-page .left-section p {
+  color: #33691e;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-width: 220px;
+}
+
+/* RIGHT SIDE */
+.register-page .right-section {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 40px 34px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+
+.register-page .right-section h2 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+.register-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.register-page input,
+.register-page select {
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.92rem;
+  background: #f5eef0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.register-page input:focus,
+.register-page select:focus {
+  border-color: #2e7d32;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.15);
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+  padding-right: 42px;
+}
+
+.password-wrapper span {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.register-page .right-section small {
+  display: block;
+  margin-top: -6px;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.register-page button[type="submit"] {
+  background: #2e7d32;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.register-page button[type="submit"]:hover {
+  background: #1b5e20;
+}
+
+.register-footer {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.92rem;
+  color: #555;
+}
+
+.register-footer a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
+
+.error,
+.success {
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 0.92rem;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+@media (max-width: 900px) {
+  .register-container {
+    flex-direction: column;
+    max-width: 520px;
+  }
+
+  .register-page .left-section {
+    flex: none;
+    min-width: unset;
+    padding: 32px 24px;
+  }
+
+  .register-page .right-section {
+    max-height: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .register-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,148 @@
+/* Landing — SMART AGRI FARM (shared nav: components/site-nav.css) */
+:root {
+  --site-nav-offset: 86px;
+}
+
+.home {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+  background: #f3f4f6;
+  overflow-x: hidden;
+}
+
+.home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.home-hero {
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #43a047 0%, #2e7d32 55%, #1b5e20 100%);
+  padding: clamp(26px, 5vh, 46px) 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid #2f9e44;
+  border-bottom: 1px solid #2f9e44;
+}
+
+.home-hero__title {
+  margin: 0 0 20px;
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.home-hero__subtitle {
+  margin: 0 auto 14px;
+  max-width: 640px;
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.home-hero__btn {
+  display: inline-block;
+  padding: 6px 18px;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  background: #e8e8e8;
+  color: #1b5e20;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.home-hero__btn:hover {
+  background: #f5f5f5;
+  transform: translateY(-1px);
+}
+
+.home-welcome {
+  flex: 1;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(22px, 4vh, 42px) 18px;
+}
+
+.home-welcome__inner {
+  width: 100%;
+  max-width: 740px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 22px;
+}
+
+.home-welcome__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-welcome__logo {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.home-welcome__brand-name {
+  margin-top: 6px;
+  font-size: 1.9rem;
+  font-weight: 900;
+  line-height: 0.9;
+  color: #166534;
+  text-align: center;
+}
+
+.home-welcome__title {
+  margin: 0 0 8px;
+  color: #2e7d32;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 700;
+}
+
+.home-welcome__body {
+  margin: 0;
+  color: #4b5563;
+  font-size: clamp(0.74rem, 1.2vw, 0.85rem);
+  line-height: 1.5;
+  max-width: 520px;
+}
+
+@media (max-width: 640px) {
+  .home-welcome__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .home-welcome__body {
+    max-width: none;
+  }
+}
