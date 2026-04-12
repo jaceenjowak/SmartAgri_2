@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import SiteNav from "../components/SiteNav";
 import "./home.css";
-import logo from "../logo.svg";
+import logo from "../assets/logo.png";
 
 export default function Home() {
   const location = useLocation();

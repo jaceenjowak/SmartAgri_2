@@ -5,7 +5,11 @@ import Features from "./pages/features";
 import Contacts from "./pages/contacts";
 import Login from "./pages/login";
 import Registration from "./pages/registration";
-import Dashboard from "./pages/dashboard";
+import DashboardLayout from "./pages/DashboardLayout";
+import DashboardSensors from "./pages/DashboardSensors";
+import DashboardAbout from "./pages/DashboardAbout";
+import DashboardFeatures from "./pages/DashboardFeatures";
+import DashboardContacts from "./pages/DashboardContacts";
 
 function App() {
   return (
@@ -17,7 +21,12 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
-        <Route path="/dashboard" element={<Dashboard />} /> {/* ✅ USE IT */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<DashboardSensors />} />
+          <Route path="about" element={<DashboardAbout />} />
+          <Route path="features" element={<DashboardFeatures />} />
+          <Route path="contacts" element={<DashboardContacts />} />
+        </Route>
       </Routes>
     </Router>
   );

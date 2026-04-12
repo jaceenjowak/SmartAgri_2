@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import SiteNav from "../components/SiteNav";
 import "./login.css";
-import logo from "../logo.svg";
+import logo from "../assets/logo.png";
 
 export default function Login() {
   const navigate = useNavigate();

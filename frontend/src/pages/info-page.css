@@ -1,61 +1,85 @@
+/* About & Contacts — aligned with home layout (home.css hero + welcome) */
 .info-page {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background: #f3f4f6;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+  background: #f3f4f6;
   overflow-x: hidden;
 }
 
 .info-main {
   flex: 1;
   display: flex;
-  padding: 24px;
+  flex-direction: column;
+  padding: 0;
 }
 
-.info-card {
+.info-hero {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: clamp(22px, 5vw, 42px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin: 0;
+  background: linear-gradient(135deg, #43a047 0%, #2e7d32 55%, #1b5e20 100%);
+  padding: clamp(26px, 5vh, 46px) 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid #2f9e44;
+  border-bottom: 1px solid #2f9e44;
 }
 
-.info-title {
-  margin: 0 0 14px;
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  color: #166534;
+.info-hero__title {
+  margin: 0 0 16px;
+  font-size: clamp(1.5rem, 4vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.info-hero__subtitle {
+  margin: 0 auto;
+  max-width: 640px;
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+}
+
+.info-content {
+  flex: 1;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(22px, 4vh, 42px) 18px;
+}
+
+.info-content__inner {
+  width: 100%;
+  max-width: 740px;
 }
 
 .info-text {
-  margin: 0 0 12px;
-  max-width: 720px;
-  line-height: 1.6;
+  margin: 0 0 14px;
+  line-height: 1.55;
   color: #4b5563;
+  font-size: clamp(0.74rem, 1.2vw, 0.88rem);
 }
 
-.info-grid {
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 12px;
+.info-text:last-child {
+  margin-bottom: 0;
 }
 
-.info-pill {
-  border: 1px solid #dcfce7;
-  border-radius: 10px;
-  background: #f0fdf4;
+.info-text--emphasis {
   color: #166534;
   font-weight: 700;
-  padding: 12px;
-  text-align: center;
 }
 
 @media (max-width: 640px) {
-  .info-main {
-    padding: 16px;
+  .info-hero {
+    padding: 22px 16px 28px;
   }
 }

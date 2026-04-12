@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import Chart from "chart.js/auto";
-import SiteNav from "../components/SiteNav";
 import "./dashboard.css";
 
 const firebaseConfig = {
@@ -43,7 +42,7 @@ function StatCard({ icon, label, value }) {
   );
 }
 
-export default function Dashboard() {
+export default function DashboardSensors() {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
@@ -165,7 +164,7 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="dashboard-loading">
+      <div className="dashboard-loading dashboard-loading--embedded">
         <h2>Loading SmartAgri Dashboard...</h2>
       </div>
     );
@@ -175,9 +174,7 @@ export default function Dashboard() {
     relay === "ON" ? `${relay} 🟢` : `${relay} 🔴`;
 
   return (
-    <div className="dashboard">
-      <SiteNav showAuthLinks={false} />
-
+    <>
       <main className="dashboard-main">
         <section className="dashboard-welcome">
           <h1 className="dashboard-welcome__title">
@@ -225,6 +222,6 @@ export default function Dashboard() {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }

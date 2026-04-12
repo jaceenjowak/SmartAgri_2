@@ -2,7 +2,7 @@ import React from "react";
 import SiteNav from "../components/SiteNav";
 import "./features-page.css";
 
-const FEATURE_ITEMS = [
+export const FEATURE_ITEMS = [
   {
     title: "IoT Connectivity",
     body: "Our sensor connect via WI-fi to transmit real-time soil and weather data directly your dashboard",

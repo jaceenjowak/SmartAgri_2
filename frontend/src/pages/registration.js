@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import SiteNav from "../components/SiteNav";
 import "./register.css";
-import logo from "../logo.svg";
+import logo from "../assets/logo.png";
 
 export default function Registration() {
   const navigate = useNavigate();
