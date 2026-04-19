@@ -23,7 +23,11 @@ export default function Navbar() {
     <nav style={styles.nav}>
       <div style={styles.inner}>
         <Link to="/dashboard" style={styles.brand}>
-          <span style={{ fontSize: "22px" }}>🌱</span>
+          <img
+            src="/brand-logo.png"
+            alt="SmartAgri Farm"
+            style={styles.brandLogo}
+          />
           <strong style={{ fontSize: "16px", letterSpacing: "0.3px" }}>
             SmartAgri Farm
           </strong>
@@ -83,9 +87,16 @@ const styles = {
   brand: {
     display: "flex",
     alignItems: "center",
-    gap: "8px",
+    gap: "10px",
     textDecoration: "none",
     color: "#fff",
+    flexShrink: 0,
+  },
+  brandLogo: {
+    width: "40px",
+    height: "40px",
+    objectFit: "contain",
+    borderRadius: "8px",
     flexShrink: 0,
   },
   links: { display: "flex", gap: "4px", flex: 1 },

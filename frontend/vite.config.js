@@ -7,4 +7,9 @@ export default defineConfig({
       jsxRuntime: "automatic", // This eliminates the need for React imports
     }),
   ],
+  server: {
+    proxy: {
+      "/api": { target: "http://localhost:5000", changeOrigin: true },
+    },
+  },
 });

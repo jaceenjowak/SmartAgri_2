@@ -4,8 +4,12 @@ require("dotenv").config();
 
 const app = express();
 
-// Middleware
-app.use(cors({ origin: "http://localhost:5173" })); // Vite default port
+// Middleware — allow Vite on localhost or 127.0.0.1, any port (CORS is bypassed if you use the Vite proxy in dev)
+const corsOptions =
+  process.env.CORS_ORIGIN === "true" || !process.env.CORS_ORIGIN
+    ? { origin: true, credentials: true }
+    : { origin: process.env.CORS_ORIGIN, credentials: true };
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -26,7 +30,19 @@ app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
 });
 
+const db = require("./config/db");
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🌱 SmartAgri API running on http://localhost:${PORT}`);
-});
+
+async function start() {
+  try {
+    await db.ensureUserSchema();
+  } catch (err) {
+    console.error("⚠️ Schema check (users columns):", err.message);
+  }
+  app.listen(PORT, () => {
+    console.log(`🌱 SmartAgri API running on http://localhost:${PORT}`);
+  });
+}
+
+start();

@@ -29,6 +29,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (data) => {
     const res = await API.post("/auth/register", data);
     localStorage.setItem("smartagri_token", res.data.token);
+    if (res.data.user) setUser(res.data.user);
     return res.data;
   };
 

@@ -1,8 +1,11 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: "http://localhost:5000/api",
-});
+/* Dev: Vite proxy sends /api → http://localhost:5000. Prod: set Vite env VITE_API_BASE_URL. */
+const baseURL =
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.DEV ? "/api" : "http://localhost:5000/api");
+
+const API = axios.create({ baseURL });
 
 // Attach JWT token to every request automatically
 API.interceptors.request.use((config) => {

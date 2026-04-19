@@ -48,6 +48,7 @@ export default function MoistureChart({ data }) {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: { position: "top" },
     },
@@ -64,9 +65,13 @@ export default function MoistureChart({ data }) {
     <div style={styles.wrapper}>
       <h3 style={styles.heading}>Soil Moisture Trend</h3>
       {data.length === 0 ? (
-        <p style={styles.empty}>No data yet. Waiting for sensor readings...</p>
+        <div style={styles.chartBody}>
+          <p style={styles.empty}>No data yet. Waiting for sensor readings...</p>
+        </div>
       ) : (
-        <Line data={chartData} options={options} />
+        <div style={styles.chartBody}>
+          <Line data={chartData} options={options} />
+        </div>
       )}
     </div>
   );
@@ -78,7 +83,25 @@ const styles = {
     borderRadius: "10px",
     padding: "20px",
     boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
+    width: "100%",
+    flex: 1,
+    minHeight: 0,
+    display: "flex",
+    flexDirection: "column",
+    boxSizing: "border-box",
   },
   heading: { margin: "0 0 16px", fontSize: "16px", color: "#1a6b3c" },
-  empty: { color: "#999", textAlign: "center", padding: "40px 0" },
+  chartBody: {
+    flex: 1,
+    minHeight: "300px",
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+  },
+  empty: {
+    color: "#999",
+    textAlign: "center",
+    margin: "auto 0",
+    padding: "24px 12px",
+  },
 };

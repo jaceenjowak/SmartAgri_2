@@ -33,7 +33,7 @@ export default function Notifications() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#f0f7f3" }}>
+    <div style={styles.page}>
       <Navbar />
       <div style={styles.content}>
         <div style={styles.header}>
@@ -72,12 +72,35 @@ export default function Notifications() {
           )}
         </div>
       </div>
+
+      <footer style={styles.footer}>
+        <div style={styles.footerInner}>
+          <span style={styles.footerBrand}>SmartAgri Farm</span>
+          <span style={styles.footerSep}>·</span>
+          <span style={styles.footerMeta}>
+            © {new Date().getFullYear()} Smart agriculture monitoring
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }
 
 const styles = {
-  content: { maxWidth: "800px", margin: "0 auto", padding: "24px 20px" },
+  page: {
+    minHeight: "100vh",
+    background: "#f0f7f3",
+    display: "flex",
+    flexDirection: "column",
+  },
+  content: {
+    maxWidth: "800px",
+    margin: "0 auto",
+    padding: "24px 20px",
+    flex: 1,
+    width: "100%",
+    boxSizing: "border-box",
+  },
   header: {
     display: "flex",
     justifyContent: "space-between",
@@ -124,4 +147,24 @@ const styles = {
     background: "#fff",
     borderRadius: "10px",
   },
+  footer: {
+    marginTop: "auto",
+    background: "#1a6b3c",
+    color: "rgba(255,255,255,0.85)",
+    padding: "14px 20px",
+    fontSize: "13px",
+    textAlign: "center",
+  },
+  footerInner: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "8px",
+  },
+  footerBrand: { fontWeight: 700, color: "#fff" },
+  footerSep: { opacity: 0.5 },
+  footerMeta: { color: "rgba(255,255,255,0.75)" },
 };

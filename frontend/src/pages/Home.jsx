@@ -41,15 +41,6 @@ export default function Home() {
             ))}
           </div>
 
-          <div style={styles.navActions}>
-            <Link to="/register" style={styles.navRegister}>
-              👤 Register
-            </Link>
-            <Link to="/login" style={styles.navLogin}>
-              → Login
-            </Link>
-          </div>
-
           <button
             style={styles.hamburger}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -70,21 +61,6 @@ export default function Home() {
                 {l.icon} {l.label}
               </a>
             ))}
-            <div style={{ height: 8 }} />
-            <Link
-              to="/register"
-              style={styles.mobileLink}
-              onClick={() => setMenuOpen(false)}
-            >
-              👤 Register
-            </Link>
-            <Link
-              to="/login"
-              style={styles.mobileLink}
-              onClick={() => setMenuOpen(false)}
-            >
-              → Login
-            </Link>
           </div>
         )}
       </nav>
@@ -102,7 +78,7 @@ export default function Home() {
             <img
               src="/logo.png"
               alt="SmartAgri Logo"
-              style={{ width: "70px", height: "70px", objectFit: "contain" }}
+              style={{ width: "98px", height: "98px", objectFit: "contain" }}
             />
           </div>
           <h1 style={styles.heroTitle}>SMARTAGRI FARM</h1>
@@ -285,12 +261,9 @@ export default function Home() {
             Join SmartAgri Farm and start managing your irrigation smarter, not
             harder.
           </p>
-          <div style={styles.heroBtns}>
+          <div style={styles.ctaBtnWrap}>
             <Link to="/register" style={styles.ctaBtnGreen}>
               Get Started Free
-            </Link>
-            <Link to="/login" style={styles.ctaBtnOutline}>
-              Sign In
             </Link>
           </div>
         </div>
@@ -345,22 +318,6 @@ export default function Home() {
           <p style={styles.footerSub}>
             © 2025 SmartAgri Farm | Empowering Smart Agriculture 🌾
           </p>
-          <div
-            style={{
-              display: "flex",
-              gap: "12px",
-              justifyContent: "center",
-              marginTop: "8px",
-            }}
-          >
-            <Link to="/login" style={styles.footerLink}>
-              Login
-            </Link>
-            <span style={{ color: "#555" }}>·</span>
-            <Link to="/register" style={styles.footerLink}>
-              Register
-            </Link>
-          </div>
         </div>
       </footer>
     </div>
@@ -420,25 +377,6 @@ const styles = {
     fontWeight: 500,
     whiteSpace: "nowrap",
   },
-  navActions: { display: "flex", gap: "8px", flexShrink: 0 },
-  navRegister: {
-    padding: "7px 14px",
-    border: `1.5px solid ${GREEN}`,
-    borderRadius: "7px",
-    color: GREEN,
-    textDecoration: "none",
-    fontSize: "13px",
-    fontWeight: 600,
-  },
-  navLogin: {
-    padding: "7px 14px",
-    background: GREEN,
-    borderRadius: "7px",
-    color: "#fff",
-    textDecoration: "none",
-    fontSize: "13px",
-    fontWeight: 600,
-  },
   hamburger: {
     display: "none",
     background: "none",
@@ -495,8 +433,8 @@ const styles = {
     padding: "0 20px",
   },
   heroLogoCircle: {
-    width: "72px",
-    height: "72px",
+    width: "112px",
+    height: "112px",
     borderRadius: "50%",
     background: "rgba(255,255,255,0.18)",
     border: "2px solid rgba(255,255,255,0.4)",
@@ -635,7 +573,7 @@ const styles = {
   },
   featuresGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
+    gridTemplateColumns: "repeat(3,minmax(0,1fr))",
     gap: "20px",
   },
   featureCard: {
@@ -683,6 +621,10 @@ const styles = {
     fontWeight: 700,
     fontSize: "15px",
   },
+  ctaBtnWrap: {
+    display: "flex",
+    justifyContent: "center",
+  },
 
   contactGrid: {
     display: "grid",
@@ -709,5 +651,4 @@ const styles = {
     marginBottom: "8px",
   },
   footerSub: { color: "#888", fontSize: "13px", margin: 0 },
-  footerLink: { color: "#aaa", textDecoration: "none", fontSize: "13px" },
 };

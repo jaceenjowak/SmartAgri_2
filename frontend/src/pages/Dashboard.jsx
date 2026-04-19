@@ -105,10 +105,10 @@ export default function Dashboard() {
         )}
 
         <div style={styles.mainRow}>
-          <div style={{ flex: 2 }}>
+          <div style={styles.chartCol}>
             <MoistureChart data={history} />
           </div>
-          <div style={{ flex: 1 }}>
+          <div style={styles.controlCol}>
             <PumpControl pumpOn={pumpOn} onToggle={setPumpOn} />
           </div>
         </div>
@@ -118,13 +118,35 @@ export default function Dashboard() {
           {m ? new Date(m.created_at).toLocaleString() : "No readings yet"}
         </p>
       </div>
+
+      <footer style={styles.footer}>
+        <div style={styles.footerInner}>
+          <span style={styles.footerBrand}>SmartAgri Farm</span>
+          <span style={styles.footerSep}>·</span>
+          <span style={styles.footerMeta}>
+            © {new Date().getFullYear()} Smart agriculture monitoring
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }
 
 const styles = {
-  page: { minHeight: "100vh", background: "#f0f7f3" },
-  content: { maxWidth: "1200px", margin: "0 auto", padding: "24px 20px" },
+  page: {
+    minHeight: "100vh",
+    background: "#f0f7f3",
+    display: "flex",
+    flexDirection: "column",
+  },
+  content: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: "24px 20px",
+    flex: 1,
+    width: "100%",
+    boxSizing: "border-box",
+  },
   header: { marginBottom: "24px" },
   pageTitle: { margin: 0, fontSize: "24px", color: "#1a6b3c" },
   subtitle: { margin: "4px 0 0", color: "#666", fontSize: "13px" },
@@ -147,6 +169,42 @@ const styles = {
     gap: "20px",
     flexWrap: "wrap",
     marginBottom: "16px",
+    alignItems: "stretch",
+    minHeight: "440px",
+  },
+  chartCol: {
+    flex: 2,
+    minWidth: "280px",
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "440px",
+  },
+  controlCol: {
+    flex: 1,
+    minWidth: "260px",
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "440px",
   },
   lastUpdated: { textAlign: "right", color: "#aaa", fontSize: "12px" },
+  footer: {
+    marginTop: "auto",
+    background: "#1a6b3c",
+    color: "rgba(255,255,255,0.85)",
+    padding: "14px 20px",
+    fontSize: "13px",
+    textAlign: "center",
+  },
+  footerInner: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "8px",
+  },
+  footerBrand: { fontWeight: 700, color: "#fff" },
+  footerSep: { opacity: 0.5 },
+  footerMeta: { color: "rgba(255,255,255,0.75)" },
 };

@@ -37,7 +37,7 @@ export default function Login() {
             <img
             src="/logo2.png"
             alt="SmartAgri Logo"
-            style={{ width: "48px", height: "48px", objectFit: "contain" }}
+            style={{ width: "76px", height: "76px", objectFit: "contain" }}
           />
           </div>
           <div style={styles.brandName}>
@@ -199,8 +199,8 @@ const styles = {
     padding: "40px 32px",
   },
   logoCircle: {
-    width: "92px",
-    height: "92px",
+    width: "136px",
+    height: "136px",
     borderRadius: "50%",
     background: "rgba(255,255,255,0.18)",
     border: "3px solid rgba(255,255,255,0.4)",

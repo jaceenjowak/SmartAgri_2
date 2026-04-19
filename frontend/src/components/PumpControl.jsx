@@ -56,15 +56,21 @@ const styles = {
   card: {
     background: "#fff",
     borderRadius: "10px",
-    padding: "20px",
+    padding: "24px",
     boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
+    width: "100%",
+    flex: 1,
+    minHeight: 0,
+    boxSizing: "border-box",
+    display: "flex",
+    flexDirection: "column",
   },
-  heading: { margin: "0 0 16px", fontSize: "16px", color: "#1a6b3c" },
+  heading: { margin: "0 0 20px", fontSize: "16px", color: "#1a6b3c" },
   statusRow: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: "16px",
+    marginBottom: "20px",
   },
   badge: {
     color: "#fff",
@@ -75,7 +81,7 @@ const styles = {
   },
   btn: {
     width: "100%",
-    padding: "12px",
+    padding: "14px 16px",
     color: "#fff",
     border: "none",
     borderRadius: "8px",
@@ -87,7 +93,8 @@ const styles = {
   hint: {
     color: "#999",
     fontSize: "12px",
-    marginTop: "12px",
+    marginTop: "auto",
+    paddingTop: "20px",
     textAlign: "center",
   },
 };
